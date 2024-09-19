@@ -37,3 +37,34 @@ public class Task
 
 
 }
+public class Menu
+{
+    public static char IsValidInput(ConsoleKeyInfo input, string msg, params char[] desired)
+    {
+        while (!desired.Contains(input.KeyChar))
+        {
+            Console.WriteLine(input.KeyChar + " is not an option. " + msg);
+            IsValidInput(Console.ReadKey(), msg, desired);
+        }
+        return input.KeyChar;
+
+    }
+
+    public static void NewMenu(List<Task> tasks)
+    {
+        Console.Clear();
+        Console.WriteLine($"{"ID",5}{"Task",12}");
+        for (int i = 0; i < Console.WindowWidth; i++)
+        {
+            Console.Write("-");
+        }
+        foreach (Task t in tasks)
+        {
+            Console.WriteLine(Task.DisplayTask(t));
+        }
+
+        Console.WriteLine("Press \"+\" to add a task, \"i\" to se a task description \"x\" to mark a task complete, and \"z\" to leave:");
+
+    }
+
+}
