@@ -1,4 +1,4 @@
-﻿namespace Tasks.Utilites;
+﻿namespace Utilites;
 
 public class Task
 {
@@ -17,7 +17,10 @@ public class Task
 
     public static string DisplayTask(Task tsk)
     {
-        return" ";
+        string complete = " ";
+        if (tsk.isComplete) { complete = "x"; }
+        return $"[{complete}]{tsk.id, -10}{tsk.title}";
+
     }
 
 
