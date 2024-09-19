@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Tasks.Utilites\Tasks.Utilites.csproj" />
+  </ItemGroup>
+
 </Project>
