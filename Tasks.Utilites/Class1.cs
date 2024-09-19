@@ -5,7 +5,7 @@ public class Task
     readonly int id;
     readonly string title;
     readonly string description;
-    bool isComplete = false;
+    public bool isComplete = false;
 
     public Task(int _id, string _title, string _description)
     {
@@ -26,6 +26,11 @@ public class Task
     public static string DisplayDescription(Task tsk)
     {
         return $"{tsk.title}:\n{tsk.description}";
+    }
+
+    public static void MarkComplete(Task tsk)
+    {
+        
     }
 
 

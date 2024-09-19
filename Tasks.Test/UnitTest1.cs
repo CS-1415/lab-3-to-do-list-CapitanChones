@@ -26,4 +26,17 @@ public class UnitTest1
         Debug.Assert(Utilites.Task.DisplayDescription(t2) == $"Go to Sleep:\nlay down and go to bed");
 
     }
+
+    [Fact]
+    public void TestMarkComplete()
+    {
+        var t1 = new Utilites.Task(1, "Wash Car", "go get soap and a sponge and wash your car");
+        var t2 = new Utilites.Task(43, "Go to Sleep", "lay down and go to bed");
+
+        Utilites.Task.MarkComplete(t1);
+        Utilites.Task.MarkComplete(t2);
+        
+        Debug.Assert(t1.isComplete);
+        Debug.Assert(t2.isComplete);
+    }
 }
