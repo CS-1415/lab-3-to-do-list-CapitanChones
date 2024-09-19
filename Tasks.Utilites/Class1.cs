@@ -19,7 +19,7 @@ public class Task
     {
         string complete = " ";
         if (tsk.isComplete) { complete = "x"; }
-        return $"[{complete}]{tsk.id, -10}{tsk.title}";
+        return $"[{complete}]{tsk.id,-10}{tsk.title}";
 
     }
 
@@ -30,7 +30,7 @@ public class Task
 
     public static void MarkComplete(Task tsk)
     {
-        
+        tsk.isComplete = true;
     }
 
 
